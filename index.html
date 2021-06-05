@@ -3,7 +3,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>
-		Templates.js - Demo Page
+		my filter.js - Demo Pagess
 	</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
@@ -34,16 +34,10 @@
 
 
 		<div class="control-group span8" >
-			<textarea style="width: 750px;" rows="25">
+			<textarea style="width: 500px;" rows="25">
 
-			&lt;ctx = $('#myFilterJs');&gt;
-				&lt;$(document).ready(function() {&gt;
-					&lt;filtersJs.draw( ctx, {&gt;
-						&lt;allowed_positive_keywords: true,&gt;
-						&lt;allowed_negative_keywords: true,&gt;
-				&lt;});&gt;
-			&lt;});&gt;
-
+			&lt; in development &gt;
+				
 
 			</textarea>
 		</div>
@@ -55,13 +49,39 @@
 
 	ctx = $('#myFilterJs');
 	$(document).ready(function() {
-		filtersJs.draw( ctx, {
+
+		filtersJs.draw(ctx, {
 			allowed_positive_keywords: true,
 			allowed_negative_keywords: true,
-			
+			allowed_values: [
+				'Argentina',
+				'Pakistan',
+				'United States'
+			],
+
+			on_positive_keyword_added: function(value) {
+				console.log('New positive keyword ' + value + ' has been added');
+			},
+
+			on_negative_keyword_added: function(value) {
+				console.log('New negative keyword ' + value + ' has been added');
+			},
+
 		});
+
+		filtersJs.addPositiveKeyword(ctx, 'United Kingldom');
+		filtersJs.addPositiveKeyword(ctx, 'United Kingldom 1');
+		filtersJs.addNegativeKeywords(ctx, 'United');
+		filtersJs.removeKeyword(ctx, 'Pakistan');
+
+
+		filtersJs.getPositiveKeywords(ctx);
+		filtersJs.getNegativeKeywords(ctx);
+
 	});
 
 </script>
 
 </html>
+
+		
