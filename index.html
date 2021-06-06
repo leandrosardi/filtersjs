@@ -3,7 +3,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>
-		my filter.js - Demo Pagess
+		filterJS - General Library
 	</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
@@ -30,14 +30,80 @@
 
 <body>
 
-	<div id='myFilterJs'></div>
+	<select class="form-select" id="exm" aria-label="Default select example">
+	  <option  hidden="">Select Example</option>
+	  <option  selected value="1">1. General Filter</option>
+	  <option value="2">2. Lists of Allowed Values</option>
+	   <option value="3">3. Adding Positive Keywords</option>
+	  <option value="4">4. Adding Negative Keywords</option>
+	  <option value="5">5. Getting Positive Keywords Added by the User</option>
+	  <option value="6">6. Getting Negative Keywords Added by the User</option>
+	  <option value="7">7. Removing Keywords</option>
+	  <option value="8">8. Events Handling</option>
+	  
+
+	</select>
+
+
+	<div id='filterJs'></div>
 
 
 		<div class="control-group span8" >
-			<textarea style="width: 500px;" rows="25">
+			<textarea style="width: 600px;" rows="25">
+			<1. General Filter>
 
-			&lt; in development &gt;
-				
+				filtersJs.draw(ctx, {
+					allowed_positive_keywords: true,
+					allowed_negative_keywords: true,
+				});
+
+			<2. Lists of Allowed Values>
+			
+				filtersJs.draw(ctx, {
+					allowed_positive_keywords: true,
+					allowed_negative_keywords: true,
+					allowed_values: [
+						'Argentina',
+						'Pakistan',
+						'United States'
+					],
+				});
+
+			<3. Adding Positive Keywords>
+			
+				filtersJs.addPositiveKeyword(ctx, 'United Kingldom');
+
+			<4. Adding Negative Keywords>
+			
+				filtersJs.addNegativeKeywords(ctx, 'India');
+
+			<5. Positive Keywords Added by the User>
+			
+				filtersJs.getPositiveKeywords(ctx)
+
+			<6. Negative Keywords Added by the User>
+			
+				filtersJs.getNegativeKeywords(ctx)
+
+			<7. Removing Keywords>
+			
+				filtersJs.removeKeyword(ctx, 'India');
+
+			<8. Events Handling>  //important: open console for check result
+		
+				filtersJs.draw(ctx, {
+
+					allowed_positive_keywords: true,
+					on_positive_keyword_added: function(value) {
+						console.log('New positive keyword ' + value + ' has been added');
+					},
+
+					allowed_negative_keywords: true,
+					on_negative_keyword_added: function(value) {
+						console.log('New negative keyword ' + value + ' has been added');
+					},
+
+				});
 
 			</textarea>
 		</div>
@@ -47,40 +113,78 @@
 
 <script>
 
-	ctx = $('#myFilterJs');
+	ctx = $('#filterJs');
 	$(document).ready(function() {
 
 		filtersJs.draw(ctx, {
-			allowed_positive_keywords: true,
-			allowed_negative_keywords: true,
-			allowed_values: [
-				'Argentina',
-				'Pakistan',
-				'United States'
-			],
+					allowed_positive_keywords: true,
+					allowed_negative_keywords: true,
+				});
+		
 
-			on_positive_keyword_added: function(value) {
-				console.log('New positive keyword ' + value + ' has been added');
-			},
+		$('#exm').on('change', function() {
+		
+		  var status=this.value;
 
-			on_negative_keyword_added: function(value) {
-				console.log('New negative keyword ' + value + ' has been added');
-			},
-			
+			if(status==1){
+
+				filtersJs.draw(ctx, {
+					allowed_positive_keywords: true,
+					allowed_negative_keywords: true,
+				});
+
+			}
+			else if(status==2){
+
+				filtersJs.draw(ctx, {
+					allowed_positive_keywords: true,
+					allowed_negative_keywords: true,
+					allowed_values: [
+						'Argentina',
+						'Pakistan',
+						'United States'
+					],
+				});
+
+			}
+			else if(status==3){
+
+				filtersJs.addPositiveKeyword(ctx, 'United Kingldom');
+			}
+			else if(status==4){
+				filtersJs.addNegativeKeywords(ctx, 'India');
+			}
+				else if(status==5){
+				
+				filtersJs.getPositiveKeywords(ctx)
+				// ['Argentina', 'Pakistan', 'United States']
+			}
+			else if(status==6){
+				
+				filtersJs.getNegativeKeywords(ctx)
+				// ['Argentina', 'Pakistan', 'United States']
+			}
+			else if (status==7) {
+				filtersJs.removeKeyword(ctx, 'India');
+			}
+			else if (status==8) {
+				filtersJs.draw(ctx, {
+					allowed_positive_keywords: true,
+					on_positive_keyword_added: function(value) {
+						console.log('New positive keyword ' + value + ' has been added');
+					},
+
+					allowed_negative_keywords: true,
+					on_negative_keyword_added: function(value) {
+						console.log('New negative keyword ' + value + ' has been added');
+					},
+
+				});
+			}		
 		});
-
-    // filtersJs.addPositiveKeyword(ctx, 'United Kingldom');
-    // filtersJs.addPositiveKeyword(ctx, 'United Kingldom 1');
-    // filtersJs.addNegativeKeywords(ctx, 'United');
-    // filtersJs.addNegativeKeywords(ctx, 'India');
-    // filtersJs.removeKeyword(ctx, 'Pakistan');
-
-
-    // filtersJs.getPositiveKeywords(ctx);
-    // filtersJs.getNegativeKeywords(ctx);
-
-    // filtersJs.removeKeyword(ctx, 'India');
+		
 	});
+
 
 </script>
 
