@@ -72,11 +72,14 @@
 		filtersJs.addPositiveKeyword(ctx, 'United Kingldom');
 		filtersJs.addPositiveKeyword(ctx, 'United Kingldom 1');
 		filtersJs.addNegativeKeywords(ctx, 'United');
+		filtersJs.addNegativeKeywords(ctx, 'India');
 		filtersJs.removeKeyword(ctx, 'Pakistan');
 
 
 		filtersJs.getPositiveKeywords(ctx);
 		filtersJs.getNegativeKeywords(ctx);
+
+		//filtersJs.removeKeyword(ctx, 'India');
 
 	});
 
