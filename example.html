@@ -33,18 +33,69 @@
 
         <br/>
 
-		<section class="container span10">	  
+		<section class="container span11">	  
 			<section class="box">
-				<div id='job_title'></div>
+				<header>
+					<h5>
+						<i class="icon-th-list"></i>
+						Simple Filter
+					</h5>
+				</header>
+				<div class="span5" id='job_title'></div>
+				<div class="span6">
+					<pre>
+var job_title = document.getElementById('job_title');	  
+filtersJs.draw(job_title, {
+	label: 'Job Positions',
+	allowed_positive_keywords: true,
+	allowed_negative_keywords: true,
+});			
+					</pre>
+				</div>
 			</section>
+
 			<section class="box">
-				<div id='location2'></div>
+				<header>
+					<h5>
+						<i class="icon-th-list"></i>
+						List of Allowed Values
+					</h5>
+				</header>
+				<div class="span5" id='location2'></div>
+				<div class="span6">
+					<pre>
+var location2 = document.getElementById('location2');
+filtersJs.draw(location2, {
+	label: 'Locations',
+	allowed_positive_keywords: true,
+	allowed_negative_keywords: false,
+	allowed_values: [
+		'Argentina',
+		'Pakistan',
+		'United States'
+	],
+});			
+					</pre>
+				</div>
 			</section>
+
 			<section class="box">
-				<div id='industry'></div>
+				<header>
+					<h5>
+						<i class="icon-th-list"></i>
+						Catch Events
+					</h5>
+				</header>
+				<div class="span5" id='industry'></div>
+				<div class="span6">
+					<pre>
+					</pre>
+				</div>
 			</section>
 		</section>	  
 	</body>
+
+
 	<script>
 		$(document).ready(function() {
 
@@ -72,6 +123,12 @@
 				label: 'Industries',
 				allowed_positive_keywords: true,
 				allowed_negative_keywords: true,
+				on_add_value: function(value) {
+					alert("You added: " + value + " to the list of allowed values.");
+				},
+				on_remove_value: function(value) {
+					alert("You removed: " + value);
+				},
 			});	
   
 		});
