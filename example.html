@@ -33,7 +33,7 @@
 
         <br/>
 
-		<section class="container span11">	  
+		<section class="container span12">	  
 			<section class="box">
 				<header>
 					<h5>
@@ -89,6 +89,18 @@ filtersJs.draw(location2, {
 				<div class="span5" id='industry'></div>
 				<div class="span6">
 					<pre>
+var industry = document.getElementById('industry');
+filtersJs.draw(industry, {
+	label: 'Industries',
+	allowed_positive_keywords: true,
+	allowed_negative_keywords: true,
+	on_add_value: function(value) {
+		alert("You added: " + value);
+	},
+	on_remove_value: function(value) {
+		alert("You removed: " + value);
+	},
+});	
 					</pre>
 				</div>
 			</section>
@@ -99,6 +111,7 @@ filtersJs.draw(location2, {
 	<script>
 		$(document).ready(function() {
 
+			// simple filter
 			var job_title = document.getElementById('job_title');	  
 			filtersJs.draw(job_title, {
 				label: 'Job Positions',
@@ -106,6 +119,7 @@ filtersJs.draw(location2, {
 				allowed_negative_keywords: true,
 			});
 
+			// list of allowed values
 			var location2 = document.getElementById('location2');
 			filtersJs.draw(location2, {
 				label: 'Locations',
@@ -118,13 +132,14 @@ filtersJs.draw(location2, {
 				],
 			});
 
+			// catch events
 			var industry = document.getElementById('industry');
 			filtersJs.draw(industry, {
 				label: 'Industries',
 				allowed_positive_keywords: true,
 				allowed_negative_keywords: true,
 				on_add_value: function(value) {
-					alert("You added: " + value + " to the list of allowed values.");
+					alert("You added: " + value);
 				},
 				on_remove_value: function(value) {
 					alert("You removed: " + value);
