@@ -1,3 +1,6 @@
+![GitHub issues](https://img.shields.io/github/issues/leandrosardi/filtersjs) ![GitHub](https://img.shields.io/github/license/leandrosardi/filtersjs) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/leandrosardi/filtersjs) ![GitHub last commit](https://img.shields.io/github/last-commit/leandrosardi/filtersjs)
+
+
 # Filters.Js
 The **Filters.Js** is a little HTML widget to show nice filters that enhance the user experience.
 
@@ -105,7 +108,7 @@ or the negative keywords added to the filter too.
 <input id='countries' style='width:750px;' />
 <script>
 	var ctx = document.getElementById('countries');
-	filtersJs.addPositiveKeyword(ctx, 'United Kingldom')
+	filtersJs.addValue(ctx, 'United Kingldom', true)
 </script>
 ```
 
@@ -113,7 +116,7 @@ or the negative keywords added to the filter too.
 <input id='countries' style='width:750px;' />
 <script>
 	var ctx = document.getElementById('countries');
-	filtersJs.addNegativeKeywords(ctx, 'India')
+	filtersJs.addValue(ctx, 'India', false)
 </script>
 ```
 
@@ -130,7 +133,7 @@ or the negative keywords added to the filter too.
 
 # Events Handling
 
-You can catch the event when either a positive keyword is added,
+You can catch the event when either a value is added,
 
 ```html
 <input id='countries' style='width:750px;' />
@@ -139,15 +142,15 @@ You can catch the event when either a positive keyword is added,
 	$(document).ready(function() {
 		filtersJs.draw(ctx, {
 			allowed_positive_keywords: true,
-			on_positive_keyword_added: function(value) {
-				console.print('New positive keyword ' + value + ' has been added');
+			on_add_value: function(value) {
+				console.print('New value ' + value + ' has been added');
 			},
 		});
 	});
 </script>
 ```
 
-or when a negative keyword is added too.
+or when a value is removed too.
 
 ```html
 <input id='countries' style='width:750px;' />
@@ -156,8 +159,8 @@ or when a negative keyword is added too.
 	$(document).ready(function() {
 		filtersJs.draw(ctx, {
 			allowed_negative_keywords: true,
-			on_positive_keyword_added: function(value) {
-				console.print('New neagtive keyword ' + value + ' has been added');
+			on_remove_value: function(value) {
+				console.print('Value ' + value + ' has been removed');
 			},
 		});
 	});
