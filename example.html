@@ -153,14 +153,43 @@ filtersJs.draw(getvalues, {
 	allowed_negative_keywords: true,
 });	
 $('#clicktogetvalues').click(function() {
-	alert('Positive Values:'+filtersJs.getPositiveKeywords(getvalues));
-	alert('Negative Values:'+filtersJs.getNegativeKeywords(getvalues));
+	alert('Positive Values:'+filtersJs.getPositiveValues(getvalues));
+	alert('Negative Values:'+filtersJs.getNegativeValues(getvalues));
 });
 					</pre>
 				</div>
 			</section>
 		</section>
 
+
+		<section class="container span12">	  
+			<section class="box">
+				<header>
+					<h5>
+						<i class="icon-th-list"></i>
+						Remove Values by Code <input id="clicktoremoveuk" type="button" value="Click to Remove United Kingdom" />
+					</h5>
+				</header>
+				<div class="span5" id='removeuk'></div>
+				<div class="span6">
+					<pre>
+var removeuk = document.getElementById('removeuk');
+filtersJs.draw(removeuk, {
+	label: 'Remove Values',
+	allowed_positive_keywords: true,
+	allowed_negative_keywords: true,
+});	
+// adding values by code doesn't trigger events.
+filtersJs.addValue(removeuk, 'Argentina', true);
+filtersJs.addValue(removeuk, 'United Kingdom', false);
+// removing values by code doesn't trigger events.
+$('#clicktoremoveuk').click(function() {
+	filtersJs.removeValue(removeuk, 'United Kingdom');
+});
+					</pre>
+				</div>
+			</section>
+		</section>
 
 	</body>
 
@@ -222,8 +251,23 @@ $('#clicktogetvalues').click(function() {
 				allowed_negative_keywords: true,
 			});	
 			$('#clicktogetvalues').click(function() {
-				alert('Positive Values:'+filtersJs.getPositiveKeywords(getvalues));
-				alert('Negative Values:'+filtersJs.getNegativeKeywords(getvalues));
+				alert('Positive Values:'+filtersJs.getPositiveValues(getvalues));
+				alert('Negative Values:'+filtersJs.getNegativeValues(getvalues));
+			});
+
+			// remove united kingdom by code
+			var removeuk = document.getElementById('removeuk');
+			filtersJs.draw(removeuk, {
+				label: 'Remove Values',
+				allowed_positive_keywords: true,
+				allowed_negative_keywords: true,
+			});	
+			// adding values by code doesn't trigger events.
+			filtersJs.addValue(removeuk, 'Argentina', true);
+			filtersJs.addValue(removeuk, 'United Kingdom', false);
+			// removing values by code doesn't trigger events.
+			$('#clicktoremoveuk').click(function() {
+				filtersJs.removeValue(removeuk, 'United Kingdom');
 			});
 		});
 	</script>

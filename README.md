@@ -83,7 +83,7 @@ You can get either positive keywords added to the filter,
 <input id='countries' style='width:750px;' />
 <script>
 	var ctx = document.getElementById('countries');
-	filtersJs.getPositiveKeywords(ctx)
+	filtersJs.getPositiveValues(ctx)
 	// ['Argentina', 'Pakistan', 'United States']
 </script>
 ```
@@ -94,7 +94,7 @@ or the negative keywords added to the filter too.
 <input id='countries' style='width:750px;' />
 <script>
 	var ctx = document.getElementById('countries');
-	filtersJs.getNegativeKeywords(ctx)
+	filtersJs.getNegativeValues(ctx)
 	// ['India']
 </script>
 ```
@@ -123,7 +123,7 @@ or the negative keywords added to the filter too.
 <input id='countries' style='width:750px;' />
 <script>
 	var ctx = document.getElementById('countries');
-	filtersJs.removeKeyword(ctx, 'India')
+	filtersJs.removeValue(ctx, 'India')
 	// no matter if the keyword was positive or negative
 </script>
 ```
