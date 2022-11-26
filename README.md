@@ -8,7 +8,7 @@ The **Filters.Js** is a little HTML widget to show nice filters that enhance the
 
 ![image](https://i.ibb.co/3fQd581/pic1.png)
 
-# Getting Started
+## 1. Getting Started
 Get started in 3 simple steps.
 
 1. Download the required libraries and stylesheets.
@@ -52,7 +52,7 @@ All these files are included in this project. You can download them from this pa
 
 **Use Case:** After add a new keyword, the focus is set on the input box, in order to allow the user to add many keywords using the keyboard only (usability).
 
-# Lists of Allowed Values
+## 2. Lists of Allowed Values
 
 You can setup a limited list of values allowed to add to the filter.
 
@@ -78,7 +78,7 @@ You can setup a limited list of values allowed to add to the filter.
 
 **Use Case:** Both include or exclude buttons remain disabled if the content inside the input box does not match with any allowed value. The comparsion is not key-sensitive.
 
-# Getting Keywords Added by the User
+## 3. Getting Keywords Added by the User
 
 You can get either positive keywords added to the filter,
 
@@ -102,7 +102,7 @@ or the negative keywords added to the filter too.
 </script>
 ```
 
-# Adding Keywords
+## 4. Adding Keywords
 
 ```html
 <input id='countries' style='width:750px;' />
@@ -120,7 +120,7 @@ or the negative keywords added to the filter too.
 </script>
 ```
 
-# Removing Keywords
+## 5. Removing Keywords
 
 ```html
 <input id='countries' style='width:750px;' />
@@ -131,7 +131,7 @@ or the negative keywords added to the filter too.
 </script>
 ```
 
-# Events Handling
+## 6. Events Handling
 
 You can catch the event when either a value is added,
 
@@ -167,7 +167,7 @@ or when a value is removed too.
 </script>
 ```
 
-## Using Filters.Js as a [MySaaS](https://github.com/leandrosardi/mysaas) Extension
+## 7. Using Filters.Js as a [MySaaS](https://github.com/leandrosardi/mysaas) Extension
 
 If you are running a [MySaaS](https://github.com/leandrosardi/mysaas) project, you can add **Filters.js** as an extension.
 
@@ -188,15 +188,14 @@ git clone https://github.com/leandrosardi/filtersjs
 BlackStack::Extensions.append :filtersjs
 ```
 
-# Additional Notes
-The **Filters.Js** is used at [**ExpandedVenture**](https://expandedventure.com/expandedventure) to develop different UI/UX features.
+# 8. Additional Notes
 
 The **Filters.Js** library is just starting on Jun-2021, and more functions will be added as needed.
 
 The **Filters.Js** library has been written following the [**W3C JavaScript Best Practices**](https://www.w3.org/community/webed/wiki/JavaScript_best_practices).
 
-# Disclaimer
+# 9. Disclaimer
 Use at your own risk. The use of the software and scripts downloaded on this site is done at your own discretion and risk and with agreement that you will be solely responsible for any damage to any computer system or loss of data that results from such activities.
 
-# Maintainer
+# 10. Maintainer
 Leandro Daniel Sardi <leandro((dot))sardi((@))expandedventure.com>
