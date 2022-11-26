@@ -1,118 +1,245 @@
-<section class='row-fluid'>
-    <div class='span12'>
-        <img src="https://github.com/leandrosardi/mysaas/blob/main/public/core/images/logo/logo-16-01.png?raw=true" alt='ConnectionSphere' />
-        <p>SelectRows.js Library</p>
-        <br/>
-        <p>
-            The <b>SelectRows.Js</b> is a JavaScript library for handling the rows selection of an HTML table.<br/>
-            <p>Visit our <a href="https://github.com/leandrosardi/selectrowsjs/" target="_window">SelectRowsJs on GitHub</a> to find code examples.</p>
-        </p>
-    </div>
-</section>
-
-<br/>
-
-<section class='row-fluid'>
-    <div class='span12 box'>
-            <h3>Live Example</h3>
-
-            <p>Select and unselect rows to see it working. <button class="btn btn-blue" data-rows-group-id='users'>This button is enabled if any row is checked.</button></p>
-
-            <table class="table table-striped">
-                <thead>
-                    <th style='text-align: center; width:15px' >
-                        <input class="checkbox select-all-rows" data-input-id='ids' data-rows-group-id='users' type="checkbox">
-                    </th>
-                    <th style ='width:36px;'>
-                        <!-- picture -->
-                    </th>
-                    <th style ='width:auto;'>
-                        Name
-                    </th>
-                    <th style ='width:auto;'>
-                        Email
-                    </th>
-                    <th style ='width:auto;'>
-                        Phone
-                    </th>
-                    <th style='width:36px;'>
-                        Verified
-                    </th>
-                    <th style='width:36px;'>
-                        <!-- remove button -->
-                    </th>
-                </thead>
-            
-                <tbody>
-                    <tr>
-                        <td style='text-align: center; vertical-align: top;'>
-                            <input class="checkbox select-row" data-rows-group-id='users' type="checkbox" id="123" data-id="123" />
-                        </td>
-                        <td>
-                            <img class='avatar' src="https://www.gravatar.com/avatar/123" alt="Leandro Daniel Sardi" />
-                        </td>
-                        <td>
-                            <input class='user-input input-block-level' type='text' id='name' value='Leandro Daniel Sardi' />
-                        </td>
-                        <td>
-                            <input class='user-input input-block-level' type='text' id='email' value='leandro.sardi@expandedventure.com' />
-                        </td>						
-                        <td>
-                            <input class='user-input input-block-level' type='text' id='phone' value='' />
-                        </td>
-                        <td style='text-align: center; vertical-align: top;'>
-                            <a class='btn btn-link' style='color:green;' title='Verified' href=#><i class="icon-ok"></i></a>
-                        </td>
-                        <td style='text-align: center; vertical-align: top;'>
-                            <a class='btn btn-link' style='color:red;' title='Remove User' href=#><i class="icon-remove"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style='text-align: center; vertical-align: top;'>
-                            <input class="checkbox select-row" data-rows-group-id='users' type="checkbox" id="456" data-id="456" />
-                        </td>
-                        <td>
-                            <img class='avatar' src="https://www.gravatar.com/avatar/456" alt="Anibal Smith" />
-                        </td>
-                        <td>
-                            <input class='user-input input-block-level' type='text' id='name' value='Anibal Smith' />
-                        </td>
-                        <td>
-                            <input class='user-input input-block-level' type='text' id='email' value='anibal.smith@expandedventure.com' />
-                        </td>						
-                        <td>
-                            <input class='user-input input-block-level' type='text' id='phone' value='555-5555' />
-                        </td>
-                        <td style='text-align: center; vertical-align: top;'>
-                            <a class='btn btn-link' style='color:green;' title='Verified' href=#><i class="icon-ok"></i></a>
-                        </td>
-                        <td style='text-align: center; vertical-align: top;'>
-                            <a class='btn btn-link' style='color:red;' title='Remove User' href=#><i class="icon-remove"></i></a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <section class='row-fluid'>
+            <img src="https://github.com/leandrosardi/mysaas/blob/main/public/core/images/logo/logo-16-01.png?raw=true" alt='ConnectionSphere' />
+            <p>Filters.js Library</p>
         </section>
 
-        <section class='row-fluid'>
-            <div class="span6 box">
-                <h3>Selected Rows</h3>
-                <p>A comma-separated list of IDs is built on this text field.</p>
-                <input type='text' name='ids' id='ids' value='' />
-            </div>
+        <br/>
 
-            <div class="span6 box">
-                <h3>Code Examples</h3>
-                <p>Visit our <a href="https://github.com/leandrosardi/selectrowsjs/" target="_window">SelectRowsJs on GitHub</a> to find code examples.</p>
-                <p><b>Remember to Star It!</b></p>
-            </div>
-    </div>
-</section>
+		<section class="container span12">	  
+			<section class="box">
+				<header>
+					<h5>
+						<i class="icon-th-list"></i>
+						Simple Filter
+					</h5>
+				</header>
+				<div class="span5" id='job_title'></div>
+				<div class="span6">
+					<pre>
+var job_title = document.getElementById('job_title');	  
+filtersJs.draw(job_title, {
+	label: 'Job Positions',
+	allowed_positive_keywords: true,
+	allowed_negative_keywords: true,
+});			
+					</pre>
+				</div>
+			</section>
+		</section>
+
+		<section class="container span12">	  
+			<section class="box">
+				<header>
+					<h5>
+						<i class="icon-th-list"></i>
+						List of Allowed Values
+					</h5>
+				</header>
+				<div class="span5" id='location2'></div>
+				<div class="span6">
+					<pre>
+var location2 = document.getElementById('location2');
+filtersJs.draw(location2, {
+	label: 'Locations',
+	allowed_positive_keywords: true,
+	allowed_negative_keywords: false,
+	allowed_values: [
+		'Argentina',
+		'Pakistan',
+		'United States'
+	],
+});			
+					</pre>
+				</div>
+			</section>
+		</section>
+
+		<section class="container span12">	  
+			<section class="box">
+				<header>
+					<h5>
+						<i class="icon-th-list"></i>
+						Catch Events
+					</h5>
+				</header>
+				<div class="span5" id='industry'></div>
+				<div class="span6">
+					<pre>
+var industry = document.getElementById('industry');
+filtersJs.draw(industry, {
+	label: 'Industries',
+	allowed_positive_keywords: true,
+	allowed_negative_keywords: true,
+	on_add_value: function(value) {
+		alert("You added: " + value);
+	},
+	on_remove_value: function(value) {
+		alert("You removed: " + value);
+	},
+});	
+					</pre>
+				</div>
+			</section>
+		</section>
+
+		<section class="container span12">	  
+			<section class="box">
+				<header>
+					<h5>
+						<i class="icon-th-list"></i>
+						Load Existing Configuration
+					</h5>
+				</header>
+				<div class="span5" id='currentconfig'></div>
+				<div class="span6">
+					<pre>
+var currentconfig = document.getElementById('currentconfig');
+filtersJs.draw(currentconfig, {
+	label: 'Your Current Configuration',
+	allowed_positive_keywords: true,
+	allowed_negative_keywords: true,
+});	
+// adding values by code doesn't trigger events.
+filtersJs.addValue(currentconfig, 'Argentina', true);
+filtersJs.addValue(currentconfig, 'United Kingdom', false);
+					</pre>
+				</div>
+			</section>
+		</section>
+
+		<section class="container span12">	  
+			<section class="box">
+				<header>
+					<h5>
+						<i class="icon-th-list"></i>
+						Get Values <input id="clicktogetvalues" type="button" value="Click to Show Values" />
+					</h5>
+				</header>
+				<div class="span5" id='getvalues'></div>
+				<div class="span6">
+					<pre>
+var getvalues = document.getElementById('getvalues');
+filtersJs.draw(getvalues, {
+	label: 'Click the button below to get the list of values on this filter',
+	allowed_positive_keywords: true,
+	allowed_negative_keywords: true,
+});	
+$('#clicktogetvalues').click(function() {
+	alert('Positive Values:'+filtersJs.getPositiveValues(getvalues));
+	alert('Negative Values:'+filtersJs.getNegativeValues(getvalues));
+});
+					</pre>
+				</div>
+			</section>
+		</section>
 
 
-<script>
-    // call the function init when the page is loaded.
-    selectRowsJs.init();
-</script>
+		<section class="container span12">	  
+			<section class="box">
+				<header>
+					<h5>
+						<i class="icon-th-list"></i>
+						Remove Values by Code <input id="clicktoremoveuk" type="button" value="Click to Remove United Kingdom" />
+					</h5>
+				</header>
+				<div class="span5" id='removeuk'></div>
+				<div class="span6">
+					<pre>
+var removeuk = document.getElementById('removeuk');
+filtersJs.draw(removeuk, {
+	label: 'Remove Values',
+	allowed_positive_keywords: true,
+	allowed_negative_keywords: true,
+});	
+// adding values by code doesn't trigger events.
+filtersJs.addValue(removeuk, 'Argentina', true);
+filtersJs.addValue(removeuk, 'United Kingdom', false);
+// removing values by code doesn't trigger events.
+$('#clicktoremoveuk').click(function() {
+	filtersJs.removeValue(removeuk, 'United Kingdom');
+});
+					</pre>
+				</div>
+			</section>
+		</section>
+
+	<script>
+		$(document).ready(function() {
+
+			// simple filter
+			var job_title = document.getElementById('job_title');	  
+			filtersJs.draw(job_title, {
+				label: 'Job Positions',
+				allowed_positive_keywords: true,
+				allowed_negative_keywords: true,
+			});
+
+			// list of allowed values
+			var location2 = document.getElementById('location2');
+			filtersJs.draw(location2, {
+				label: 'Locations',
+				allowed_positive_keywords: true,
+				allowed_negative_keywords: false,
+				allowed_values: [
+					'Argentina',
+					'Pakistan',
+					'United States'
+				],
+			});
+
+			// catch events
+			var industry = document.getElementById('industry');
+			filtersJs.draw(industry, {
+				label: 'Industries',
+				allowed_positive_keywords: true,
+				allowed_negative_keywords: true,
+				on_add_value: function(value) {
+					alert("You added: " + value);
+				},
+				on_remove_value: function(value) {
+					alert("You removed: " + value);
+				},
+			});	
+
+			// load existing configuration
+			var currentconfig = document.getElementById('currentconfig');
+			filtersJs.draw(currentconfig, {
+				label: 'Your Current Configuration',
+				allowed_positive_keywords: true,
+				allowed_negative_keywords: true,
+			});	
+			// adding values by code doesn't trigger events.
+			filtersJs.addValue(currentconfig, 'Argentina', true);
+			filtersJs.addValue(currentconfig, 'United Kingdom', false);
+
+			// get values by code
+			var getvalues = document.getElementById('getvalues');
+			filtersJs.draw(getvalues, {
+				label: 'Click the button below to get the list of values on this filter',
+				allowed_positive_keywords: true,
+				allowed_negative_keywords: true,
+			});	
+			$('#clicktogetvalues').click(function() {
+				alert('Positive Values:'+filtersJs.getPositiveValues(getvalues));
+				alert('Negative Values:'+filtersJs.getNegativeValues(getvalues));
+			});
+
+			// remove united kingdom by code
+			var removeuk = document.getElementById('removeuk');
+			filtersJs.draw(removeuk, {
+				label: 'Remove Values',
+				allowed_positive_keywords: true,
+				allowed_negative_keywords: true,
+			});	
+			// adding values by code doesn't trigger events.
+			filtersJs.addValue(removeuk, 'Argentina', true);
+			filtersJs.addValue(removeuk, 'United Kingdom', false);
+			// removing values by code doesn't trigger events.
+			$('#clicktoremoveuk').click(function() {
+				filtersJs.removeValue(removeuk, 'United Kingdom');
+			});
+		});
+	</script>
+
 
 		

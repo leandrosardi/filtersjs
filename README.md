@@ -4,7 +4,7 @@
 # Filters.Js
 The **Filters.Js** is a little HTML widget to show nice filters that enhance the user experience.
 
-*(pending)* You can find a [live example](https://connectionsphere.com/developers/templatesjs) of **Templates.Js** here: [https://connectionsphere.com/developers/filtersjs](https://connectionsphere.com/developers/filtersjs)
+*(pending)* [You can find a live example here](https://connectionsphere.com/developers/filtersjs).
 
 ![image](https://i.ibb.co/3fQd581/pic1.png)
 
@@ -165,6 +165,27 @@ or when a value is removed too.
 		});
 	});
 </script>
+```
+
+## Using Filters.Js as a [MySaaS](https://github.com/leandrosardi/mysaas) Extension
+
+If you are running a [MySaaS](https://github.com/leandrosardi/mysaas) project, you can add **Filters.js** as an extension.
+
+Such an extension includes a code example screen (`/filtersjs`) that you show to other developers, for reference. 
+
+Install **Filters.js** as an extension of [MySaaS](https://github.com/leandrosardi/mysaas) is pretty simple.
+
+**Step 1:** Clone the project in the `extensions` filder.
+
+```bash
+cd ~/code/mysaas/extensions
+git clone https://github.com/leandrosardi/filtersjs
+```
+
+**Step 2:** Add the extension to your `config.rb` file.
+
+```ruby
+BlackStack::Extensions.append :filtersjs
 ```
 
 # Additional Notes
