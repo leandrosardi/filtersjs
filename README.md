@@ -4,7 +4,7 @@
 # Filters.Js
 The **Filters.Js** is a little HTML widget to show nice filters that enhance the user experience.
 
-[You can find a live example here](https://connectionsphere.com/developers/filtersjs).
+[Find a live example here](https://connectionsphere.com/developers/filtersjs).
 
 **>>>> IF YOU LIKE THIS PROJECT, STAR IT ! <<<<** 
 
