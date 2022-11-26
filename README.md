@@ -4,9 +4,24 @@
 # Filters.Js
 The **Filters.Js** is a little HTML widget to show nice filters that enhance the user experience.
 
-*(pending)* [You can find a live example here](https://connectionsphere.com/developers/filtersjs).
+[You can find a live example here](https://connectionsphere.com/developers/filtersjs).
+
+**>>>> IF YOU LIKE THIS PROJECT, STAR IT ! <<<<** 
 
 ![image](https://i.ibb.co/3fQd581/pic1.png)
+
+**Outline:**
+
+1. [Getting Started](#1-getting-started)
+2. [Lists of Allowed Values](#2-lists-of-allowed-values)
+3. [Getting Keywords Added by the User](#3-getting-keywords-added-by-the-user)
+4. [Adding Keywords](#4-adding-keywords)
+5. [Removing Keywords](#5-removing-keywords)
+6. [Events Handling](#6-events-handling)
+7. [Using Filters.js as a MySaaS Extension](#7-using-filtersjs-as-a-mysaas-extension)
+8. [Additional Notes](#8-additional-notes)
+9. [Disclaimer](#9-disclaimer)
+10. [Maintener](#10-maintainer)
 
 ## 1. Getting Started
 Get started in 3 simple steps.
@@ -188,14 +203,16 @@ git clone https://github.com/leandrosardi/filtersjs
 BlackStack::Extensions.append :filtersjs
 ```
 
-# 8. Additional Notes
+## 8. Additional Notes
 
 The **Filters.Js** library is just starting on Jun-2021, and more functions will be added as needed.
 
 The **Filters.Js** library has been written following the [**W3C JavaScript Best Practices**](https://www.w3.org/community/webed/wiki/JavaScript_best_practices).
 
-# 9. Disclaimer
+## 9. Disclaimer
+
 Use at your own risk. The use of the software and scripts downloaded on this site is done at your own discretion and risk and with agreement that you will be solely responsible for any damage to any computer system or loss of data that results from such activities.
 
-# 10. Maintainer
+## 10. Maintainer
+
 Leandro Daniel Sardi <leandro((dot))sardi((@))expandedventure.com>
